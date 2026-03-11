@@ -921,7 +921,8 @@
     const track = document.querySelector('.services-track');
     if (track) {
       track.addEventListener('touchstart', () => track.classList.add('paused'), { passive: true });
-      track.addEventListener('touchend', () => track.classList.remove('paused'), { passive: true });
+      document.addEventListener('touchend', () => track.classList.remove('paused'), { passive: true });
+      document.addEventListener('touchcancel', () => track.classList.remove('paused'), { passive: true });
     }
 
     // Contact form → Formspree
