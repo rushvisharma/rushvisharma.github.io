@@ -917,12 +917,10 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Carousel touch pause
+    // Carousel touch toggle
     const track = document.querySelector('.services-track');
     if (track) {
-      track.addEventListener('touchstart', () => track.classList.add('paused'), { passive: true });
-      document.addEventListener('touchend', () => track.classList.remove('paused'), { passive: true });
-      document.addEventListener('touchcancel', () => track.classList.remove('paused'), { passive: true });
+      track.addEventListener('touchstart', () => track.classList.toggle('paused'), { passive: true });
     }
 
     // Contact form → Formspree
