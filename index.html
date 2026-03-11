@@ -175,6 +175,13 @@
     .services-track-wrap {
       position: relative; overflow: hidden;
     }
+    .carousel-tap-overlay {
+      display: none;
+      position: absolute; inset: 0; z-index: 10; cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .carousel-tap-overlay { display: block; }
+    }
     .services-track-wrap::before,
     .services-track-wrap::after {
       content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none;
@@ -596,6 +603,7 @@
       <p class="services-note">Crafted the strategy, wrote every word, and built this website from scratch.</p>
     </div>
     <div class="services-track-wrap">
+      <div class="carousel-tap-overlay" id="carouselOverlay"></div>
       <div class="services-track">
 
         <!-- SET 1 -->
@@ -917,10 +925,11 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Carousel tap to pause/resume
+    // Carousel tap to pause/resume (mobile overlay)
     const track = document.querySelector('.services-track');
-    if (track) {
-      track.addEventListener('click', () => track.classList.toggle('paused'));
+    const overlay = document.getElementById('carouselOverlay');
+    if (track && overlay) {
+      overlay.addEventListener('click', () => track.classList.toggle('paused'));
     }
 
     // Contact form → Formspree
