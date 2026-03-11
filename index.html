@@ -919,21 +919,19 @@
 
     // Carousel tap to pause/resume
     const track = document.querySelector('.services-track');
-    if (track) {
+    const wrap = document.querySelector('.services-track-wrap');
+    if (track && wrap) {
       let paused = false;
-      track.addEventListener('pointerdown', (e) => {
-        const card = e.target.closest('.svc-card');
-        if (!card) return;
+      wrap.addEventListener('click', () => {
         track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
         if (paused) {
           track.style.animationPlayState = 'running';
           paused = false;
         } else {
           track.style.animationPlayState = 'paused';
-          card.classList.add('tapped');
           paused = true;
         }
-      }, { passive: true });
+      });
     }
 
     // Contact form → Formspree
