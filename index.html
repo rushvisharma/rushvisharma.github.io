@@ -928,10 +928,11 @@
         track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
         if (paused) {
           track.style.animationPlayState = 'running';
-          track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
+          track.querySelectorAll('.svc-card').forEach(c => c.style.borderColor = '');
           paused = false;
         } else {
           track.style.animationPlayState = 'paused';
+          track.querySelectorAll('.svc-card').forEach(c => c.style.borderColor = 'var(--ink)');
           paused = true;
         }
       });
