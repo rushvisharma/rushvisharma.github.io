@@ -186,8 +186,7 @@
       animation: svcScroll 35s linear infinite;
       width: max-content;
     }
-    .services-track:hover,
-    .services-track.paused { animation-play-state: paused; }
+    .services-track:hover { animation-play-state: paused; }
     .svc-card.tapped { border-color: var(--ink); }
     @keyframes svcScroll {
       0%   { transform: translateX(0); }
@@ -921,18 +920,20 @@
     // Carousel tap to pause/resume
     const track = document.querySelector('.services-track');
     if (track) {
+      let paused = false;
       track.addEventListener('pointerdown', (e) => {
         const card = e.target.closest('.svc-card');
         if (!card) return;
-        e.preventDefault();
         track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
-        if (track.classList.contains('paused')) {
-          track.classList.remove('paused');
+        if (paused) {
+          track.style.animationPlayState = 'running';
+          paused = false;
         } else {
-          track.classList.add('paused');
+          track.style.animationPlayState = 'paused';
           card.classList.add('tapped');
+          paused = true;
         }
-      });
+      }, { passive: true });
     }
 
     // Contact form → Formspree
