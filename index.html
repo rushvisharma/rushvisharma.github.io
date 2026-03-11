@@ -854,16 +854,39 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Contact form → mailto
+    // Contact form → Formspree
     function handleSubmit(e) {
       e.preventDefault();
-      const name    = document.getElementById('name').value;
-      const email   = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      const to   = 'rushvisharma22@gmail.com';
-      const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const btn = document.querySelector('.btn-send');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      const data = {
+        name:    document.getElementById('name').value,
+        email:   document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
+      };
+      fetch('https://formspree.io/f/xvzwabkl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if (res.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#22c55e';
+          document.getElementById('contactForm').reset();
+        } else {
+          btn.textContent = 'Error — Try Again';
+          btn.style.background = '#ef4444';
+          btn.disabled = false;
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Error — Try Again';
+        btn.style.background = '#ef4444';
+        btn.disabled = false;
+      });
     }
   </script>
 
