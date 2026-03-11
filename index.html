@@ -921,20 +921,22 @@
     // Carousel tap to pause/resume on mobile
     const track = document.querySelector('.services-track');
     if (track && window.matchMedia('(max-width: 900px)').matches) {
-      track.querySelectorAll('.svc-card').forEach(card => {
-        card.addEventListener('touchstart', (e) => {
-          const isPaused = track.classList.contains('paused');
-          if (!isPaused) {
-            // Pause and highlight tapped card
-            track.classList.add('paused');
-            card.classList.add('tapped');
-          } else {
-            // Resume and clear highlight
-            track.classList.remove('paused');
-            track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
-          }
-        }, { passive: true });
-      });
+      let tapping = false;
+      track.addEventListener('touchstart', (e) => {
+        if (tapping) return;
+        tapping = true;
+        setTimeout(() => tapping = false, 300);
+        const card = e.target.closest('.svc-card');
+        if (!card) return;
+        const isPaused = track.classList.contains('paused');
+        track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
+        if (!isPaused) {
+          track.classList.add('paused');
+          card.classList.add('tapped');
+        } else {
+          track.classList.remove('paused');
+        }
+      }, { passive: true });
     }
 
     // Contact form → Formspree
