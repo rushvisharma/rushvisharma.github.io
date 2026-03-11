@@ -917,10 +917,10 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Carousel touch toggle
+    // Carousel tap to pause/resume
     const track = document.querySelector('.services-track');
     if (track) {
-      track.addEventListener('touchstart', () => track.classList.toggle('paused'), { passive: true });
+      track.addEventListener('click', () => track.classList.toggle('paused'));
     }
 
     // Contact form → Formspree
