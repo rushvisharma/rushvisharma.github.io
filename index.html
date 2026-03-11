@@ -189,6 +189,15 @@
     .services-track:hover,
     .services-track.paused { animation-play-state: paused; }
     .svc-card.tapped { border-color: var(--ink); }
+    .carousel-btn-wrap { display: none; justify-content: center; padding: 16px 0 0; }
+    .carousel-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: none; border: 1.5px solid var(--border); border-radius: 100px;
+      padding: 8px 18px; font-size: 13px; font-weight: 600; color: var(--ink-dim);
+      cursor: pointer; transition: border-color .2s, color .2s;
+    }
+    .carousel-btn.active { border-color: var(--ink); color: var(--ink); }
+    @media (max-width: 900px) { .carousel-btn-wrap { display: flex; } }
     @keyframes svcScroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -687,6 +696,12 @@
 
       </div>
     </div>
+    <div class="carousel-btn-wrap">
+      <button id="carouselBtn" class="carousel-btn" aria-label="Pause carousel">
+        <svg id="carouselIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        <span id="carouselLabel">Tap card to pause</span>
+      </button>
+    </div>
   </section>
 
   <!-- ABOUT -->
@@ -918,25 +933,27 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Carousel tap to pause/resume on mobile
+    // Carousel pause button (mobile)
     const track = document.querySelector('.services-track');
-    if (track && window.matchMedia('(max-width: 900px)').matches) {
-      let tapping = false;
-      track.addEventListener('touchstart', (e) => {
-        if (tapping) return;
-        tapping = true;
-        setTimeout(() => tapping = false, 300);
-        const card = e.target.closest('.svc-card');
-        if (!card) return;
+    const btn = document.getElementById('carouselBtn');
+    const icon = document.getElementById('carouselIcon');
+    const label = document.getElementById('carouselLabel');
+    if (track && btn) {
+      btn.addEventListener('click', () => {
         const isPaused = track.classList.contains('paused');
         track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
         if (!isPaused) {
           track.classList.add('paused');
-          card.classList.add('tapped');
+          btn.classList.add('active');
+          icon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
+          label.textContent = 'Tap to resume';
         } else {
           track.classList.remove('paused');
+          btn.classList.remove('active');
+          icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+          label.textContent = 'Tap card to pause';
         }
-      }, { passive: true });
+      });
     }
 
     // Contact form → Formspree
