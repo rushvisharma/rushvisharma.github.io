@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Campaigns That Don't Feel Like Campaigns – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFFFFF; --bg-alt: #F4F1EC; --ink: #0D1117; --dim: #6B7280; --pop: #E8501A; --pop-lt: #FFF0EB; --border: #E5E5E5; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 100px; transition: background .2s; }
+    .nav-cta:hover { background: var(--pop); }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 72px 40px 96px; }
+    .article-tag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; }
+    .article-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .article-meta span { font-size: 13px; color: var(--dim); font-weight: 500; }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+    .article-body { font-size: 17px; line-height: 1.85; color: #374151; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin: 48px 0 16px; letter-spacing: -.02em; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .pullquote { background: var(--bg-alt); border-left: 3px solid var(--pop); padding: 20px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; font-size: 18px; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-card { background: var(--bg-alt); border-radius: 16px; padding: 24px; }
+    .stat-card .big { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 36px; font-weight: 800; color: var(--pop); line-height: 1; margin-bottom: 6px; }
+    .stat-card .label { font-size: 14px; color: var(--dim); line-height: 1.4; }
+    .article-footer { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--ink); }
+    .more-posts h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .post-links { display: flex; flex-direction: column; gap: 12px; }
+    .post-link { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .post-link:hover { border-color: var(--ink); background: var(--bg-alt); }
+    .post-link span { color: var(--dim); font-size: 18px; }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.07); padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .article-wrap { padding: 48px 24px 72px; } .stat-grid { grid-template-columns: 1fr; } footer { padding: 20px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html#blog" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="article-tag">Campaigns</div>
+    <h1 class="article-title">Building Campaigns That Don't Feel Like Campaigns</h1>
+    <div class="article-meta">
+      <span>Growth Marketing</span>
+      <div class="meta-dot"></div>
+      <span>5 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>To give you an engagement reality check: traditional push campaigns see 2–5% engagement rates because they interrupt user behaviour. Campaigns that integrate into existing user flows can achieve 15–25% engagement because they solve problems users already have. The difference isn't creative, it's structural.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="big">15–25%</div><div class="label">Engagement rate when campaigns integrate into user flows</div></div>
+        <div class="stat-card"><div class="big">3×</div><div class="label">More shares for educational content vs. direct promotional content</div></div>
+        <div class="stat-card"><div class="big">40–60%</div><div class="label">Higher participation in community-driven vs. brand-initiated campaigns</div></div>
+        <div class="stat-card"><div class="big">5–10×</div><div class="label">Lower cost of user-generated amplification vs. paid promotion</div></div>
+      </div>
+
+      <h2>Native Formats Win</h2>
+      <p>When campaigns blend into platform-native content formats, they perform significantly better across metrics. Educational content that happens to showcase product benefits gets 3x more shares than direct promotional content. Community-driven initiatives see 40–60% higher participation rates than brand-initiated campaigns because users feel ownership rather than being marketed to.</p>
+
+      <h2>The Economics of Organic Distribution</h2>
+      <p>User-generated amplification costs 5–10x less than paid promotion and delivers higher trust signals. When your campaign becomes something users naturally share, discuss, or participate in, you're leveraging their networks instead of paying for reach. This applies whether you're marketing productivity software or DeFi protocols, authentic community participation always outperforms forced distribution.</p>
+
+      <div class="pullquote">Users spend 70% more time engaging with content that feels native to their platform and workflow. They're 4x more likely to complete actions within campaigns that solve immediate problems.</div>
+
+      <h2>Behavioural Data Tells the Story</h2>
+      <p>Users spend 70% more time engaging with content that feels native to their platform and workflow. They're 4x more likely to complete actions within campaigns that solve immediate problems versus those that just broadcast messages. This holds true across industries, from SaaS onboarding sequences to token launch campaigns.</p>
+
+      <h2>The Universal Framework</h2>
+      <p>Whether Web2 or Web3, successful campaigns follow similar patterns: they identify existing user behaviours, integrate solutions into those workflows, and measure engagement depth over surface-level metrics. The tools and platforms may differ, but users fundamentally want value before they want products.</p>
+      <p>ROI comes through relevance. Campaigns that feel natural to users consistently deliver better cost-per-acquisition and lifetime value metrics because they attract genuinely interested audiences rather than just attention. <strong>The best marketing doesn't feel like marketing, it feels like helpful content that happens to come from your brand.</strong></p>
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Writing
+      </a>
+      <div class="more-posts">
+        <h3>More from Rushvi</h3>
+        <div class="post-links">
+          <a href="blog-navigation.html" class="post-link">Building a Navigation Component with Variables <span>↗</span></a>
+          <a href="blog-web2-web3.html" class="post-link">Web2 vs. Web3 Marketing: What Actually Changes? <span>↗</span></a>
+          <a href="blog-trust-web3.html" class="post-link">How to Build Trust in Web3 (Without the Hype) <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+    
+  </footer>
+
+</body>
+</html>

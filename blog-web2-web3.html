@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web2 vs. Web3 Marketing – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFFFFF; --bg-alt: #F4F1EC; --ink: #0D1117; --dim: #6B7280; --pop: #E8501A; --pop-lt: #FFF0EB; --border: #E5E5E5; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 100px; transition: background .2s; }
+    .nav-cta:hover { background: var(--pop); }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 72px 40px 96px; }
+    .article-tag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; }
+    .article-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .article-meta span { font-size: 13px; color: var(--dim); font-weight: 500; }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+    .article-body { font-size: 17px; line-height: 1.85; color: #374151; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin: 48px 0 16px; letter-spacing: -.02em; }
+    .article-body h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 19px; font-weight: 700; color: var(--ink); margin: 36px 0 12px; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .pullquote { background: var(--bg-alt); border-left: 3px solid var(--pop); padding: 20px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; font-size: 18px; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .article-footer { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--ink); }
+    .more-posts h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .post-links { display: flex; flex-direction: column; gap: 12px; }
+    .post-link { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .post-link:hover { border-color: var(--ink); background: var(--bg-alt); }
+    .post-link span { color: var(--dim); font-size: 18px; }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.07); padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .article-wrap { padding: 48px 24px 72px; } footer { padding: 20px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html#blog" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="article-tag">Web3</div>
+    <h1 class="article-title">Web2 vs. Web3 Marketing: What Actually Changes?</h1>
+    <div class="article-meta">
+      <span>Marketing Strategy</span>
+      <div class="meta-dot"></div>
+      <span>5 min read</span>
+    </div>
+
+    <div class="article-body">
+      <h2>The Foundation Remains Strong</h2>
+      <p>Core marketing principles don't disappear in Web3. Audience research, compelling storytelling, conversion optimization, and data-driven decision making remain essential. Your campaigns still need clear value propositions, and users still need to understand "what's in it for me."</p>
+
+      <h2>Where the Real Differences Emerge</h2>
+
+      <h3>Trust Architecture</h3>
+      <p>Web2 relies on brand reputation and controlled messaging. Web3 adds a layer of cryptographic proof and on-chain transparency. You're not just saying "trust us", the blockchain provides verifiable proof of your claims. This doesn't replace traditional trust-building; it enhances it.</p>
+
+      <h3>Community Dynamics</h3>
+      <p>Web2 communities are built around products and services. Web3 communities often have economic incentives aligned through tokens or ownership. This creates deeper engagement but requires more sophisticated community management. Traditional engagement tactics work, but they're amplified when community members have skin in the game.</p>
+
+      <h3>Content Strategy Evolution</h3>
+      <p>Web2 content focuses on education, entertainment, and conversion. Web3 adds technical documentation, tokenomics explanations, and governance discussions. You need both the accessibility of traditional marketing content and the depth of technical communication.</p>
+
+      <h3>Speed vs. Sophistication</h3>
+      <p>Web2 allows for longer campaign development cycles and polished execution. Web3 demands rapid response to market movements and community feedback while maintaining quality. You need both the strategic thinking of traditional marketing and the agility of real-time community management.</p>
+
+      <div class="pullquote">The most effective Web3 marketing combines the best of both worlds, the strategic rigor of Web2 with the transparency and community ownership of Web3.</div>
+
+      <h2>The Hybrid Approach</h2>
+      <p>The most effective Web3 marketing combines the best of both worlds: the strategic rigor and user experience focus of Web2 with the transparency, community ownership, and technical authenticity of Web3. It's not about choosing one over the other, it's about knowing when to leverage each approach.</p>
+      <p>This balanced view shows you understand that evolution doesn't mean revolution in marketing fundamentals.</p>
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Writing
+      </a>
+      <div class="more-posts">
+        <h3>More from Rushvi</h3>
+        <div class="post-links">
+          <a href="blog-navigation.html" class="post-link">Building a Navigation Component with Variables <span>↗</span></a>
+          <a href="blog-campaigns.html" class="post-link">Building Campaigns That Don't Feel Like Campaigns <span>↗</span></a>
+          <a href="blog-trust-web3.html" class="post-link">How to Build Trust in Web3 (Without the Hype) <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+    
+  </footer>
+
+</body>
+</html>

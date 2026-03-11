@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Writing for the Algorithm – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFFFFF; --bg-alt: #F4F1EC; --ink: #0D1117; --dim: #6B7280; --pop: #E8501A; --pop-lt: #FFF0EB; --border: #E5E5E5; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 100px; transition: background .2s; }
+    .nav-cta:hover { background: var(--pop); }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 72px 40px 96px; }
+    .article-tag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; }
+    .article-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .article-meta span { font-size: 13px; color: var(--dim); font-weight: 500; }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+    .article-body { font-size: 17px; line-height: 1.85; color: #374151; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin: 48px 0 16px; letter-spacing: -.02em; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .pullquote { background: var(--bg-alt); border-left: 3px solid var(--pop); padding: 20px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; font-size: 18px; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .article-footer { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--ink); }
+    .more-posts h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .post-links { display: flex; flex-direction: column; gap: 12px; }
+    .post-link { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .post-link:hover { border-color: var(--ink); background: var(--bg-alt); }
+    .post-link span { color: var(--dim); font-size: 18px; flex-shrink: 0; }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.07); padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .article-wrap { padding: 48px 24px 72px; } footer { padding: 20px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html#blog" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="article-tag">Content Strategy</div>
+    <h1 class="article-title">Stop Writing for the Algorithm. The Algorithm Is Not Your Audience.</h1>
+    <div class="article-meta">
+      <span>Opinion</span>
+      <div class="meta-dot"></div>
+      <span>5 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>At some point, marketing collectively got very good at gaming systems and very bad at talking to people. And the worst part is it happened so gradually that most teams didn't notice when the shift occurred.</p>
+
+      <p>You can see it everywhere now. Blog posts structured entirely around what ranks rather than what's useful. Hooks written specifically to spike the retention metric in the first three seconds. Video formats chosen not because they serve the idea but because the platform is actively pushing that format this month and the reach is good. Captions reverse-engineered from what performed last week. All of it optimised for what the algorithm rewards, barely any of it optimised for what a real person actually wants to encounter.</p>
+
+      <p>And it works, in a narrow sense, for a while. The numbers look okay. The reach is decent. But then the algorithm updates and everything built around its preferences has to be rebuilt from scratch, because none of it was built on anything real. The audience didn't actually connect with it. The algorithm just happened to be surfacing it.</p>
+
+      <div class="pullquote">The content that outlasts algorithm changes was almost never made with platform mechanics as the primary brief. It was made for a person.</div>
+
+      <h2>The Deeper Problem</h2>
+      <p>The deeper problem is that this approach trains you to think about your audience as a secondary concern. You're writing for a system and hoping the people it delivers you to will also care. That's backwards. The system, at least in principle, is trying to show people things they genuinely want to see. So the most sustainable way to do well algorithmically is to make something a real person actually wants to read, watch, or save. But that's a harder brief than "hook in the first three seconds" so the shortcut is tempting.</p>
+
+      <p>The content that outlasts algorithm changes, the stuff people bookmark, come back to, share months after it was posted, was almost never made with platform mechanics as the primary brief. It was made for a person. Specific, real, with actual things on their mind, in an actual moment in their life or work. The algorithm caught up because humans caught up first. People engaged with it genuinely, and the system noticed.</p>
+
+      <h2>What Actually Useful Platform Knowledge Looks Like</h2>
+      <p>There's a version of knowing the algorithm that's actually useful: understanding the formats, the timing, the distribution mechanics of each platform. That knowledge is worth having. But it should be in service of getting good work in front of the right people, not a substitute for making good work in the first place.</p>
+
+      <p><strong>Write for the person. The algorithm is just trying to find them for you.</strong></p>
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Writing
+      </a>
+      <div class="more-posts">
+        <h3>More from Rushvi</h3>
+        <div class="post-links">
+          <a href="blog-ai-take.html" class="post-link">What's my take on AI? You probably want to read this <span>↗</span></a>
+          <a href="blog-feel-smart.html" class="post-link">Good Marketing Makes People Feel Smart for Choosing You <span>↗</span></a>
+          <a href="blog-measure.html" class="post-link">If You Can't Measure It, You Can't Defend It <span>↗</span></a>
+          <a href="blog-miss.html" class="post-link">Build Something People Would Actually Miss <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+    
+  </footer>
+
+</body>
+</html>

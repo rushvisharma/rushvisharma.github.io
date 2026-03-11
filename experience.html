@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work History – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #FFFFFF;
+      --bg-alt:  #F4F1EC;
+      --ink:     #0D1117;
+      --dim:     #6B7280;
+      --pop:     #E8501A;
+      --pop-lt:  #FFF0EB;
+      --border:  #E5E5E5;
+      --card:    #FAFAFA;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 40px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600; color: var(--dim);
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--ink); color: #fff;
+      font-size: 13px; font-weight: 600; padding: 9px 20px;
+      border-radius: 100px; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--pop); }
+
+    /* ── PAGE HEADER ─────────────────────────────── */
+    .page-header {
+      max-width: 1100px; margin: 0 auto;
+      padding: 72px 40px 56px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+    }
+    .page-header-left {}
+    .section-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--pop); margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    .page-header h1 em { font-style: italic; font-family: 'Inter', sans-serif; font-weight: 400; color: var(--dim); }
+    .page-header-right {
+      display: flex; gap: 40px; flex-shrink: 0; padding-bottom: 6px;
+    }
+    .h-stat .num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 36px; font-weight: 800; line-height: 1;
+      color: var(--ink);
+    }
+    .h-stat .lbl {
+      font-size: 11px; font-weight: 600; color: var(--dim);
+      text-transform: uppercase; letter-spacing: .08em; margin-top: 4px;
+    }
+
+    /* ── EXPERIENCE LIST ─────────────────────────── */
+    .exp-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* Year divider */
+    .year-divider {
+      display: flex; align-items: center; gap: 16px;
+      padding: 48px 0 24px;
+    }
+    .year-divider span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px; font-weight: 800; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--pop); white-space: nowrap;
+    }
+    .year-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* Card, same style as main page */
+    .exp-item {
+      display: grid; grid-template-columns: 88px 1fr;
+      gap: 32px; padding: 40px 0; border-top: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: 1px solid var(--border); }
+    .exp-logo {
+      width: 72px; height: 72px; border-radius: 16px;
+      overflow: hidden; background: #f0f0f0;
+      display: flex; align-items: center; justify-content: center; padding: 8px; flex-shrink: 0;
+    }
+    .exp-logo.dark-logo { background: #111; }
+    .exp-body {}
+    .exp-head {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; gap: 12px; flex-wrap: wrap;
+    }
+    .exp-company { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 800; }
+    .exp-role-badge {
+      font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--pop); background: var(--pop-lt); padding: 5px 12px; border-radius: 100px;
+    }
+    .exp-role-badge.current {
+      background: var(--pop); color: #fff;
+    }
+    .exp-period {
+      font-size: 13px; font-weight: 500; color: var(--dim); margin-bottom: 14px;
+    }
+    .exp-desc { font-size: 14px; line-height: 1.8; color: var(--dim); margin-bottom: 0; }
+    .exp-metrics {
+      display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap;
+    }
+    .metric { display: flex; flex-direction: column; gap: 2px; }
+    .metric .m-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 800; color: var(--ink); }
+    .metric .m-lbl { font-size: 11px; font-weight: 600; color: var(--dim); text-transform: uppercase; letter-spacing: .06em; }
+    .exp-skills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+    .skill-tag {
+      font-size: 12px; font-weight: 600; padding: 5px 12px;
+      border-radius: 100px; background: var(--bg-alt); color: var(--dim);
+      border: 1px solid var(--border);
+    }
+
+    /* ── CTA ─────────────────────────────────────── */
+    .cta-wrap {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .cta-wrap h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px;
+    }
+    .cta-wrap p { font-size: 15px; color: var(--dim); margin-bottom: 28px; }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--ink); color: #fff;
+      font-size: 14px; font-weight: 600; padding: 13px 28px;
+      border-radius: 100px; transition: background .2s;
+    }
+    .btn-dark:hover { background: var(--pop); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--ink); border-top: 1px solid rgba(255,255,255,.07);
+      padding: 24px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+
+    /* ── REVEAL ──────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 24px; }
+      .page-header { padding: 48px 24px 40px; flex-direction: column; align-items: flex-start; }
+      .page-header-right { gap: 24px; }
+      .exp-section { padding: 0 24px 64px; }
+      .exp-item { grid-template-columns: 1fr; gap: 16px; }
+      .exp-logo { width: 56px; height: 56px; border-radius: 12px; }
+      footer { padding: 20px 24px; }
+      .cta-wrap { padding: 56px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header reveal">
+    <div class="page-header-left">
+      <div class="section-tag">Full Work History</div>
+      <h1>Where I've<br/><em>done the work.</em></h1>
+    </div>
+    <div class="page-header-right">
+      <div class="h-stat"><div class="num">3+</div><div class="lbl">Years</div></div>
+    </div>
+  </div>
+
+  <!-- ALL EXPERIENCES -->
+  <div class="exp-section">
+
+    <div class="year-divider reveal"><span>2025 – Present</span></div>
+
+    <!-- Klink Finance -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#fff;padding:0;">
+        <img src="images/logo-klink.png" alt="Klink Finance" style="width:100%;height:100%;object-fit:contain;border-radius:16px;padding:4px;"/>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Klink Finance</div>
+          <span class="exp-role-badge current">Current · Marketing</span>
+        </div>
+        <div class="exp-period">Aug 2025 – Present · 8 mos</div>
+        <div class="exp-desc">Telling Klink's story to a million (and counting). Leading marketing efforts to grow brand presence and reach across channels.</div>
+        <div class="exp-skills">
+          <span class="skill-tag">Brand Marketing</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Growth</span>
+          <span class="skill-tag">SEO Strategy</span>
+          <span class="skill-tag">UGC</span>
+          <span class="skill-tag">CRM</span>
+          <span class="skill-tag">Social Media</span>
+          <span class="skill-tag">Marketing Automation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-divider reveal"><span>2024</span></div>
+
+    <!-- ZOTH -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#fff;padding:0;">
+        <img src="images/logo-zoth.png" alt="Zoth.io" style="width:100%;height:100%;object-fit:contain;border-radius:16px;padding:4px;"/>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Zoth.io</div>
+          <span class="exp-role-badge">Marketing Lead</span>
+        </div>
+        <div class="exp-period">May 2024 – Aug 2025 · 1 yr 4 mos</div>
+        <div class="exp-desc">Zoth is a Web3 protocol where I led the end-to-end marketing strategy. I built and scaled Zoth's community from the ground up, growing the Twitter account to over 230K+ followers and the Discord and Telegram communities to over 200K combined users. I crafted product messaging, developed go-to-market strategies for product and ecosystem launches, and managed social and content campaigns that drove 3M+ organic impressions. I collaborated cross-functionally with founders, engineers, and designers to develop the litepaper, technical documentation, and landing pages. I also initiated and ran ambassador programs, AMAs, and Twitter Spaces to grow brand engagement and early user adoption.</div>
+        <div class="exp-metrics">
+          <div class="metric"><span class="m-num">230K+</span><span class="m-lbl">Twitter Followers</span></div>
+          <div class="metric"><span class="m-num">200K+</span><span class="m-lbl">Community Members</span></div>
+          <div class="metric"><span class="m-num">3M+</span><span class="m-lbl">Organic Impressions</span></div>
+        </div>
+        <div class="exp-skills">
+          <span class="skill-tag">Marketing Strategy</span>
+          <span class="skill-tag">Go-to-Market</span>
+          <span class="skill-tag">Community Growth</span>
+          <span class="skill-tag">Web3 Marketing</span>
+          <span class="skill-tag">Campaign Management</span>
+          <span class="skill-tag">Media Relations</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-divider reveal"><span>2023</span></div>
+
+    <!-- ClickUp -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#fff;padding:0;">
+        <img src="images/logo-clickup.png" alt="ClickUp" style="width:100%;height:100%;object-fit:contain;border-radius:16px;padding:4px;"/>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">ClickUp</div>
+          <span class="exp-role-badge">Content Creator</span>
+        </div>
+        <div class="exp-period">Feb 2023 – May 2024 · 1 yr 4 mos</div>
+        <div class="exp-desc">At ClickUp, I worked as a ghostwriter and content creator, managing multiple social accounts simultaneously. I crafted over 500 tweets, threads, and informational products that drove significant audience growth, resulting in 3M+ impressions per account. Two of the Twitter accounts grew to 10K–12K followers, and two others crossed the 8K mark under my management. I focused on writing persuasive, educational, and high-engagement content that showcased ClickUp's value to different user segments. I also developed over 80+ informational assets that supported user onboarding and product understanding.</div>
+        <div class="exp-metrics">
+          <div class="metric"><span class="m-num">500+</span><span class="m-lbl">Pieces of Content</span></div>
+          <div class="metric"><span class="m-num">1M+</span><span class="m-lbl">Organic Impressions</span></div>
+          <div class="metric"><span class="m-num">12K+</span><span class="m-lbl">Followers per Account</span></div>
+        </div>
+        <div class="exp-skills">
+          <span class="skill-tag">Ghostwriting</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Twitter Marketing</span>
+          <span class="skill-tag">Audience Growth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-divider reveal"><span>2022</span></div>
+
+    <!-- Monday Blues -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#fff;padding:0;">
+        <img src="images/logo-mondayblues.png" alt="Monday Blues" style="width:100%;height:100%;object-fit:contain;border-radius:16px;padding:6px;"/>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Monday Blues</div>
+          <span class="exp-role-badge">Growth Strategist</span>
+        </div>
+        <div class="exp-period">Nov 2022 – Jan 2023 · 3 mos · Full-time</div>
+        <div class="exp-desc">At Monday Blues, a marketing agency, I worked as a Growth Strategist, creating custom content plans for diverse clients. I led a team of content writers, ensured brand voice alignment, and ghostwrote content that resonated with each client's target audience. I was directly involved in client onboarding sessions and played a key role in building efficient content pipelines. Additionally, I recruited and mentored a team of interns, helping scale content delivery for the agency.</div>
+        <div class="exp-skills">
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Ghostwriting</span>
+          <span class="skill-tag">Team Leadership</span>
+          <span class="skill-tag">Client Onboarding</span>
+          <span class="skill-tag">Recruiting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Freelance -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#f4f1ec; border:1px solid var(--border);">
+        <svg viewBox="0 0 56 56" width="52" height="52" fill="none">
+          <path d="M14 38 L22 20 L30 30 L38 14" stroke="#E8501A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="38" cy="14" r="3" fill="#E8501A"/>
+        </svg>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Freelance Projects</div>
+          <span class="exp-role-badge">Writer &amp; Strategist</span>
+        </div>
+        <div class="exp-period">Aug 2022 – Oct 2022 · 3 mos</div>
+        <div class="exp-desc">During my freelance phase, I worked on a variety of projects across fintech, mental health, and lifestyle industries. I wrote blogs, articles, and social media content tailored to each industry's specific audience. I quickly adapted to different brand voices and content formats, developing a versatile writing style. This period helped me build industry range and improve my ability to deliver high-quality content under tight deadlines.</div>
+        <div class="exp-skills">
+          <span class="skill-tag">Freelancing</span>
+          <span class="skill-tag">Blog Writing</span>
+          <span class="skill-tag">Brand Voice</span>
+          <span class="skill-tag">Fintech</span>
+          <span class="skill-tag">Adaptability</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="year-divider reveal"><span>2021 – 2022</span></div>
+
+    <!-- Guruji Astro -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#6B21A8;">
+        <svg viewBox="0 0 56 56" width="52" height="52" fill="none">
+          <text x="28" y="36" text-anchor="middle" font-size="20" font-weight="800" fill="white" font-family="sans-serif">G</text>
+        </svg>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Guruji Astro</div>
+          <span class="exp-role-badge">Content Writer</span>
+        </div>
+        <div class="exp-period">Jan 2022 – Jun 2022 · 6 mos · Internship · Ahmedabad, India</div>
+        <div class="exp-desc">At Guruji Astro, I was responsible for creating social media content and writing for marketing materials and the company's website. I helped improve the brand's social presence by developing engaging posts and coordinating email campaigns. I worked closely with the marketing team to align content with overall brand goals and deliver consistent messaging across platforms.</div>
+        <div class="exp-skills">
+          <span class="skill-tag">Content Writing</span>
+          <span class="skill-tag">Social Media</span>
+          <span class="skill-tag">Email Campaigns</span>
+          <span class="skill-tag">Brand Messaging</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dhanush Foundation -->
+    <div class="exp-item reveal">
+      <div class="exp-logo" style="background:#fff;padding:0;">
+        <img src="images/logo-dhanush.png" alt="Dhanush Foundation" style="width:100%;height:100%;object-fit:contain;border-radius:16px;padding:4px;"/>
+      </div>
+      <div class="exp-body">
+        <div class="exp-head">
+          <div class="exp-company">Dhanush Foundation</div>
+          <span class="exp-role-badge">Social Media Manager</span>
+        </div>
+        <div class="exp-period">May 2021 – Sep 2021 · 5 mos · Ahmedabad, India</div>
+        <div class="exp-desc">As a Social Media Manager for Dhanush Foundation, I developed and executed content strategies to increase online traction and community involvement. I created event promotional content, managed daily social posts, and contributed to planning both digital and offline engagement campaigns. I also handled basic video and image editing for social media distribution.</div>
+        <div class="exp-skills">
+          <span class="skill-tag">Social Media Management</span>
+          <span class="skill-tag">Event Management</span>
+          <span class="skill-tag">Content Creation</span>
+          <span class="skill-tag">Video Editing</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /exp-section -->
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <h2>Seen enough? Let's work together.</h2>
+    <p>I'm currently available for new projects and collaborations.</p>
+    <a href="index.html#contact" class="btn-dark">
+      Get In Touch
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

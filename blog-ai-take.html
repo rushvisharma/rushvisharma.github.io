@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's my take on AI? – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFFFFF; --bg-alt: #F4F1EC; --ink: #0D1117; --dim: #6B7280; --pop: #E8501A; --pop-lt: #FFF0EB; --border: #E5E5E5; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 100px; transition: background .2s; }
+    .nav-cta:hover { background: var(--pop); }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 72px 40px 96px; }
+    .article-tag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; }
+    .article-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .article-meta span { font-size: 13px; color: var(--dim); font-weight: 500; }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+    .article-body { font-size: 17px; line-height: 1.85; color: #374151; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin: 48px 0 16px; letter-spacing: -.02em; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .pullquote { background: var(--bg-alt); border-left: 3px solid var(--pop); padding: 20px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; font-size: 18px; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .article-footer { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--ink); }
+    .more-posts h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .post-links { display: flex; flex-direction: column; gap: 12px; }
+    .post-link { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .post-link:hover { border-color: var(--ink); background: var(--bg-alt); }
+    .post-link span { color: var(--dim); font-size: 18px; flex-shrink: 0; }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.07); padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .article-wrap { padding: 48px 24px 72px; } footer { padding: 20px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html#blog" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="article-tag">AI &amp; Marketing</div>
+    <h1 class="article-title">What's my take on AI? You probably want to read this.</h1>
+    <div class="article-meta">
+      <span>Opinion</span>
+      <div class="meta-dot"></div>
+      <span>7 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>There's a version of the AI conversation in marketing that's gotten really tired really fast. Will it replace copywriters? Will it replace designers? Is your job safe? That framing treats AI as a threat to be assessed rather than infrastructure to be understood, and it's mostly a distraction from the more interesting question: what does a marketer actually become capable of when they stop using AI just to generate things and start using it to think, research, and operate at a different scale entirely.</p>
+
+      <p>The people I watch closely in this space aren't the ones who've figured out the best prompts for generating social captions. They're the ones who've rebuilt how they work, their research process, their workflow, the way they move from an idea to execution, and in doing so have quietly started doing what used to require a small team.</p>
+
+      <div class="pullquote">That's the actual opportunity. Not AI as a content machine. AI as leverage.</div>
+
+      <p>The distinction matters because most marketers are still using these tools at the surface level. They generate a first draft, maybe clean it up, move on. That's useful in the way a calculator is useful, it saves time on a specific task. But it doesn't change the scope of what you're capable of. The deeper application is different. It's using AI to compress the distance between thinking and doing across the entire workflow, not just the writing part.</p>
+
+      <h2>Research Changed First</h2>
+      <p>Take research. Perplexity changed how I approach almost any brief that requires me to understand a space quickly. Not because it generates answers but because it reasons across sources in a way that surfaces the non-obvious connections faster than any search engine does. When I'm trying to understand a competitor's positioning, a new ad format, an audience I don't know well, the quality of the research I can do alone now is genuinely different from what it was two years ago. It's not that the information wasn't available before. It's that the time cost of synthesizing it made depth a luxury. That constraint is largely gone if you know how to use the tools.</p>
+
+      <h2>Automation Is Where Most Marketers Haven't Gone Yet</h2>
+      <p>The automation piece is where most marketers haven't gone yet and where the biggest delta lives. Knowing how to use something like Claude or similar tools isn't about learning to code. It's about developing the instinct to ask: does this task I do manually every week actually need to be manual? Could I describe what I'm doing clearly enough that a tool could do it for me, or help me build something that does? That question, asked consistently, changes how you see your own workflow. Things that felt like just part of the job start looking like automatable overhead. Time that was going to repetitive execution starts going to the things that actually require judgment.</p>
+
+      <p>The marketers who figure this out early aren't working harder than everyone else. They're operating with a leverage ratio that looks almost unfair from the outside. One person moving at the speed and output of two or three, not because they're exceptional but because they've built the infrastructure around themselves to work that way.</p>
+
+      <h2>The Advantage Goes to the Experimenters</h2>
+      <p>What that requires, more than any specific tool, is the habit of staying current. Not in a passive, reading-newsletters way. In an active, trying-things way. The tools that matter most right now are not the ones that were most talked about six months ago. The landscape is moving fast enough that the advantage goes to the people who are experimenting continuously rather than catching up periodically. Knowing just enough to generate content or images is table stakes at this point. The people building real leverage are the ones asking what else is possible: what can I automate, what can I compress, what can I now do alone that I used to need help with.</p>
+
+      <p>The goal isn't to replace yourself with AI. It's to replace two or three people's worth of work output with your own, because you had the curiosity to go further than the obvious use cases. That's not a small shift. That's a complete rethink of what one person in marketing is capable of, and right now, most people haven't made it yet.</p>
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Writing
+      </a>
+      <div class="more-posts">
+        <h3>More from Rushvi</h3>
+        <div class="post-links">
+          <a href="blog-algorithm.html" class="post-link">Stop Writing for the Algorithm. The Algorithm Is Not Your Audience. <span>↗</span></a>
+          <a href="blog-feel-smart.html" class="post-link">Good Marketing Makes People Feel Smart for Choosing You <span>↗</span></a>
+          <a href="blog-measure.html" class="post-link">If You Can't Measure It, You Can't Defend It <span>↗</span></a>
+          <a href="blog-miss.html" class="post-link">Build Something People Would Actually Miss <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+    
+  </footer>
+
+</body>
+</html>

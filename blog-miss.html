@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build Something People Would Actually Miss – Rushvi Sharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg: #FFFFFF; --bg-alt: #F4F1EC; --ink: #0D1117; --dim: #6B7280; --pop: #E8501A; --pop-lt: #FFF0EB; --border: #E5E5E5; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800; }
+    .nav-back { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-cta { background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: 100px; transition: background .2s; }
+    .nav-cta:hover { background: var(--pop); }
+    .article-wrap { max-width: 720px; margin: 0 auto; padding: 72px 40px 96px; }
+    .article-tag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--pop); margin-bottom: 16px; }
+    .article-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -.025em; margin-bottom: 20px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .article-meta span { font-size: 13px; color: var(--dim); font-weight: 500; }
+    .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+    .article-body { font-size: 17px; line-height: 1.85; color: #374151; }
+    .article-body p { margin-bottom: 24px; }
+    .article-body h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 800; color: var(--ink); margin: 48px 0 16px; letter-spacing: -.02em; }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .pullquote { background: var(--bg-alt); border-left: 3px solid var(--pop); padding: 20px 28px; border-radius: 0 12px 12px 0; margin: 36px 0; font-size: 18px; font-style: italic; color: var(--ink); line-height: 1.6; }
+    .article-footer { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); transition: color .2s; margin-bottom: 32px; }
+    .back-link:hover { color: var(--ink); }
+    .more-posts h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .post-links { display: flex; flex-direction: column; gap: 12px; }
+    .post-link { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-weight: 600; transition: border-color .2s, background .2s; }
+    .post-link:hover { border-color: var(--ink); background: var(--bg-alt); }
+    .post-link span { color: var(--dim); font-size: 18px; flex-shrink: 0; }
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.07); padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; }
+    footer span { font-size: 13px; color: rgba(255,255,255,.25); }
+    .avail-dot { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,.45); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .article-wrap { padding: 48px 24px 72px; } footer { padding: 20px 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Rushvi Sharma</span>
+      <a href="index.html#blog" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back
+      </a>
+      <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+    </div>
+  </nav>
+
+  <div class="article-wrap">
+    <div class="article-tag">Brand Building</div>
+    <h1 class="article-title">Build Something People Would Actually Miss.</h1>
+    <div class="article-meta">
+      <span>Brand Strategy</span>
+      <div class="meta-dot"></div>
+      <span>5 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>Most brands could disappear tomorrow and their audience would move on by the weekend. Not because the product was bad or the marketing was poor. Just because nothing about it was irreplaceable. It existed, it served a function, and something else would serve that function just as well. That's a hard thing to sit with but it's an honest question worth asking about anything you're building: if this went away, would anyone actually feel the loss.</p>
+
+      <p>The brands that people would miss aren't necessarily the biggest ones or the most well-funded ones. They're the ones that made people feel something that nothing else was making them feel. A specific kind of belonging. A way of seeing things they hadn't encountered anywhere else. A voice that felt like it understood something about them that the rest of the market was ignoring. Those things are hard to replicate, which is exactly what makes them valuable.</p>
+
+      <div class="pullquote">The brands worth missing almost always started with a point of view rather than a product.</div>
+
+      <h2>It Starts With a Point of View</h2>
+      <p>What I've noticed is that the brands worth missing almost always started with a point of view rather than a product. Not what they were selling but how they saw the world: what they thought was wrong with the existing options, what they believed their audience deserved that they weren't getting, what they were willing to say that everyone else in the category was too careful to say. That perspective is what gives a brand a shape that people can actually hold onto. Without it you have features and a logo. With it you have something people feel connected to.</p>
+
+      <h2>Brand Voice Is the Accumulation</h2>
+      <p>This is why brand voice matters more than most teams treat it. Voice isn't tone guidelines in a document. It's the accumulation of every choice a brand makes about what to say and what to leave unsaid, what to stand for and what to ignore, how to talk about hard things and whether to talk about them at all. Over time that accumulation becomes a personality, and personalities are what people form attachments to. You don't miss a set of features when they're gone. You miss a personality.</p>
+
+      <h2>The Memorial Test</h2>
+      <p>The memorial test is a useful creative filter. Before publishing something (a post, a campaign, a rebrand), ask whether it adds to the thing people would miss or whether it's just content that fills a slot. A lot of what gets made fails that test and that's fine, not everything can be meaningful. But running that question in the background keeps you honest about when you're building something real versus when you're just producing output.</p>
+
+      <p>Building something people would genuinely miss requires the confidence to be specific enough that not everyone connects with it. The brands with the most loyal audiences are rarely the ones trying to be for everyone. They found their people and went deep: on the voice, the values, the particular way of seeing things that made those people feel understood. Breadth came later, if at all, and it came because the depth was real.</p>
+
+      <p><strong>The goal isn't to be popular. It's to be irreplaceable to the right people.</strong> That's a harder thing to build and a much harder thing to replicate.</p>
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+        Back to Writing
+      </a>
+      <div class="more-posts">
+        <h3>More from Rushvi</h3>
+        <div class="post-links">
+          <a href="blog-ai-take.html" class="post-link">What's my take on AI? You probably want to read this <span>↗</span></a>
+          <a href="blog-algorithm.html" class="post-link">Stop Writing for the Algorithm. The Algorithm Is Not Your Audience <span>↗</span></a>
+          <a href="blog-feel-smart.html" class="post-link">Good Marketing Makes People Feel Smart for Choosing You <span>↗</span></a>
+          <a href="blog-measure.html" class="post-link">If You Can't Measure It, You Can't Defend It <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>© Rushvi Sharma 2025. All rights reserved.</span>
+    
+  </footer>
+
+</body>
+</html>
