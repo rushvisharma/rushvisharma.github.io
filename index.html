@@ -421,23 +421,85 @@
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
     @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    /* ── RESPONSIVE ───────────────────────────────────── */
+    /* ── RESPONSIVE: tablet ───────────────────────────── */
     @media (max-width: 900px) {
-      .hero        { grid-template-columns: 1fr; padding: 60px 24px; }
-      .hero-card   { max-width: 320px; }
-      .stats-inner { grid-template-columns: 1fr; gap: 28px; }
-      .stat-sep    { display: none; }
+      .nav-inner   { padding: 0 24px; }
+      .nav-links   { display: none; }
+      .hero        { grid-template-columns: 1fr; padding: 48px 24px 40px; gap: 40px; }
+      .hero-card   { max-width: 340px; margin: 0 auto; }
+      .stats-inner { gap: 0; }
+      .stat-sep    { width: 1px; height: 40px; }
+      .stat-item   { padding: 0 28px; }
+      .stat-item .num { font-size: 36px; }
+      .services-header { padding: 0 24px; flex-direction: column; align-items: flex-start; gap: 24px; }
+      .services-note   { margin-left: 0 !important; transform: none !important; max-width: 100%; padding: 40px 60px; }
       .svc-card { flex: 0 0 280px; width: 280px; }
-      .services-header { padding: 0 24px; }
-      .about-inner { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
       .about-section { padding: 0; }
-      .exp-section, .blog-section, .services-section { padding: 60px 24px; }
+      .about-inner { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .about-left .accent-block { padding: 52px 80px; max-width: 100%; }
+      .exp-section  { padding: 60px 24px; }
+      .blog-section { padding: 60px 24px; }
+      .services-section { padding: 60px 0; }
+      .blog-header { flex-direction: column; align-items: flex-start; gap: 20px; }
       .contact-inner { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
       .frow { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .blog-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-      footer { padding: 20px 24px; }
-      .stats-bar { padding: 40px 24px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .stats-bar { padding: 36px 24px; }
+    }
+
+    /* ── RESPONSIVE: mobile ───────────────────────────── */
+    @media (max-width: 480px) {
+      .nav-inner   { padding: 0 20px; }
+      .nav-logo    { font-size: 14px; }
+      .nav-cta     { font-size: 12px; padding: 8px 16px; }
+
+      .hero        { padding: 36px 20px 32px; gap: 32px; }
+      .hero-left h1 { font-size: 38px; }
+      .hero-left p  { font-size: 15px; }
+      .hero-btns   { flex-direction: column; align-items: stretch; }
+      .btn-dark, .btn-outline { justify-content: center; }
+      .hero-card   { max-width: 100%; padding: 24px 20px; }
+      .profile-photo { width: 110px; height: 140px; }
+
+      .stats-inner { flex-direction: column; gap: 24px; }
+      .stat-sep    { display: none; }
+      .stat-item   { padding: 0; }
+      .stat-item .num { font-size: 40px; }
+      .stats-bar   { padding: 32px 20px; }
+
+      .services-section { padding: 48px 0; }
+      .services-header  { padding: 0 20px; }
+      .services-note    { display: none; }
+      .svc-card { flex: 0 0 260px; width: 260px; padding: 24px 20px; }
+      .section-title { font-size: 32px; }
+
+      .about-section { padding: 0; }
+      .about-inner   { padding: 48px 20px; gap: 32px; }
+      .about-left .accent-block { padding: 44px 56px; }
+      .about-left .accent-block p { font-size: 15px; }
+      .about-right p { font-size: 14.5px; }
+
+      .exp-section  { padding: 48px 20px; }
+      .exp-item     { grid-template-columns: 56px 1fr; gap: 16px; padding: 28px 0; }
+      .exp-logo     { width: 56px; height: 56px; border-radius: 12px; }
+      .exp-company  { font-size: 18px; }
+      .exp-head     { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .exp-role-badge { font-size: 11px; }
+      .exp-metrics  { gap: 16px; }
+      .metric .m-num { font-size: 18px; }
+
+      .blog-section { padding: 48px 20px; }
+      .blog-item    { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+      .blog-arrow   { display: none; }
+      .blog-title   { font-size: 17px; }
+      .blog-excerpt { font-size: 13px; }
+
+      .contact-inner { padding: 48px 20px; gap: 40px; }
+      .contact-left h2 { font-size: 36px; }
+
+      footer { padding: 20px; font-size: 12px; }
+
+      .exp-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
     }
   </style>
 </head>
