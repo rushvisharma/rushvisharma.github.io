@@ -175,15 +175,6 @@
     .services-track-wrap {
       position: relative; overflow: hidden;
     }
-    .carousel-tap-overlay {
-      display: none;
-      position: absolute; inset: 0; z-index: 10; cursor: pointer;
-      background: transparent; border: none; padding: 0; margin: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-    @media (max-width: 900px) {
-      .carousel-tap-overlay { display: block; }
-    }
     .services-track-wrap::before,
     .services-track-wrap::after {
       content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none;
@@ -197,7 +188,7 @@
     }
     .services-track:hover,
     .services-track.paused { animation-play-state: paused; }
-    .services-track.paused .svc-card { border-color: var(--ink); }
+    .svc-card.tapped { border-color: var(--ink); }
     @keyframes svcScroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -606,7 +597,6 @@
       <p class="services-note">Crafted the strategy, wrote every word, and built this website from scratch.</p>
     </div>
     <div class="services-track-wrap">
-      <button class="carousel-tap-overlay" id="carouselOverlay" aria-label="Pause carousel"></button>
       <div class="services-track">
 
         <!-- SET 1 -->
@@ -928,11 +918,23 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Carousel tap to pause/resume (mobile overlay)
+    // Carousel tap to pause/resume on mobile
     const track = document.querySelector('.services-track');
-    const overlay = document.getElementById('carouselOverlay');
-    if (track && overlay) {
-      overlay.addEventListener('click', () => track.classList.toggle('paused'));
+    if (track && window.matchMedia('(max-width: 900px)').matches) {
+      track.querySelectorAll('.svc-card').forEach(card => {
+        card.addEventListener('touchstart', (e) => {
+          const isPaused = track.classList.contains('paused');
+          if (!isPaused) {
+            // Pause and highlight tapped card
+            track.classList.add('paused');
+            card.classList.add('tapped');
+          } else {
+            // Resume and clear highlight
+            track.classList.remove('paused');
+            track.querySelectorAll('.svc-card').forEach(c => c.classList.remove('tapped'));
+          }
+        }, { passive: true });
+      });
     }
 
     // Contact form → Formspree
